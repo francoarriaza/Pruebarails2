@@ -1,0 +1,23 @@
+<div class= "container">
+    <div class="row">
+        <% @events.each_slice(3) do |row| %>
+            <% row.each do |event| %>
+                <div class= "col">
+                <div class="card" style="width: 18rem;">
+                <%= image_tag event.photo,:size => '200x200', class:'card-img-top' %>
+                <div class="card-body">
+                  <h5 class="card-title"><%= event.name %></h5>
+                  <p class="card-text">Some </p>
+                  <%= link_to "completar",  event_states_path(event), class:'btn btn-primary', method: :post%>
+                </div>
+              </div>  
+                </div>
+            <% end %> 
+            <div class="w-100" style="margin-top:10px"> </div> 
+        <% end %>
+    </div>
+</div>
+
+
+    
+
